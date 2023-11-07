@@ -53,9 +53,9 @@ export default function RootPage() {
                 return (
                   <TouchableOpacity
                     key={i}
-                    className="px-3 py-2 border rounded-full"
+                    className="px-3 py-2 border border-[#FE3A30] rounded-full"
                   >
-                    <Text className="font-medium">
+                    <Text className="font-medium text-[#FE3A30]">
                       {category.replace(category[0], category[0].toUpperCase())}
                     </Text>
                   </TouchableOpacity>
