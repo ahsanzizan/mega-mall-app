@@ -3,7 +3,7 @@ export type Product = {
   brand: string;
   category: string;
   description: string;
-  discountPercentage: number;
+  discountPercentage: number | null;
   images: string[];
   price: number;
   rating: number;

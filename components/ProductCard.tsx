@@ -9,10 +9,20 @@ interface ProductCardProps {
 
 export default function ProductCard({ product }: ProductCardProps) {
   return (
-    <View
-      className="mb-8 p-3"
+    <TouchableOpacity
+      className="bg-white p-3 my-3 mx-2"
       style={{
+        borderRadius: 10,
         width: 156,
+        shadowColor: "#000",
+        shadowOffset: {
+          width: 0,
+          height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+
+        elevation: 5,
       }}
     >
       <Image
@@ -26,9 +36,24 @@ export default function ProductCard({ product }: ProductCardProps) {
       />
       <View>
         <Text className="font-medium text-[#0C1A30] mb-1">{product.title}</Text>
-        <Text className="text-[#FE3A30] text-xs font-medium mb-2">
-          ${product.price}.00
+        <Text className="text-[#FE3A30] text-xs font-medium">
+          $
+          {product.discountPercentage
+            ? Math.round(
+                product.price -
+                  product.price * (product.discountPercentage / 100)
+              )
+            : product.price}
+          .00
         </Text>
+        {product.discountPercentage && (
+          <Text
+            className="line-through text-[#C4C5C4] mb-2"
+            style={{ fontSize: 10 }}
+          >
+            ${product.price}.00
+          </Text>
+        )}
         <View className="flex flex-row items-center justify-between">
           <View className="flex flex-row items-center gap-2">
             <View className="flex flex-row items-center" style={{ gap: 3 }}>
@@ -64,6 +89,6 @@ export default function ProductCard({ product }: ProductCardProps) {
           </TouchableOpacity>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }
