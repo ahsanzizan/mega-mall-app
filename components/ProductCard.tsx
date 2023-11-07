@@ -4,6 +4,7 @@ import type { Product } from "../types/product.type";
 import { TouchableOpacity } from "react-native";
 import { router } from "expo-router";
 import { fontFamilies } from "../styles/base";
+import { calcDiscountedPrice } from "../utils/calculateDiscount";
 
 interface ProductCardProps {
   product: Product;
@@ -52,10 +53,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         >
           $
           {product.discountPercentage
-            ? Math.round(
-                product.price -
-                  product.price * (product.discountPercentage / 100)
-              )
+            ? calcDiscountedPrice(product.price, product.discountPercentage)
             : product.price}
           .00
         </Text>
