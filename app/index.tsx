@@ -8,6 +8,7 @@ import type { Product } from "../types/product.type";
 import { ScrollView } from "react-native-gesture-handler";
 import Svg, { Path } from "react-native-svg";
 import ProductCard from "../components/ProductCard";
+import { fontFamilies } from "../styles/base";
 
 export default function RootPage() {
   const [products, setProducts] = useState<Product[] | null>(null);
@@ -45,10 +46,16 @@ export default function RootPage() {
             borderBottomRightRadius: 100,
           }}
         >
-          <Text className="text-white font-bold text-xl mb-2">
+          <Text
+            className="text-white font-bold text-xl mb-2"
+            style={{ fontFamily: fontFamilies.bold }}
+          >
             Gratis Ongkir{"\n"}Selama PPKM!
           </Text>
-          <Text className="text-white" style={{ fontSize: 10 }}>
+          <Text
+            className="text-white"
+            style={{ fontSize: 10, fontFamily: fontFamilies.regular }}
+          >
             Periode Mei - Agustus 2020
           </Text>
         </View>
@@ -61,9 +68,19 @@ export default function RootPage() {
       <View className="mb-5">
         <View className="mb-5">
           <View className="flex flex-row justify-between">
-            <Text className="font-semibold text-base">Categories</Text>
+            <Text
+              className="text-base"
+              style={{ fontFamily: fontFamilies.medium }}
+            >
+              Categories
+            </Text>
             <TouchableOpacity>
-              <Text className="text-[#3669C9]">See All</Text>
+              <Text
+                className="text-[#3669C9]"
+                style={{ fontFamily: fontFamilies.regular }}
+              >
+                See All
+              </Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -81,7 +98,10 @@ export default function RootPage() {
                     key={i}
                     className="px-3 py-2 border border-[#FE3A30] rounded-full"
                   >
-                    <Text className="font-medium text-[#FE3A30]">
+                    <Text
+                      className="font-medium text-[#FE3A30]"
+                      style={{ fontFamily: fontFamilies.medium }}
+                    >
                       {category.replace(category[0], category[0].toUpperCase())}
                     </Text>
                   </TouchableOpacity>
@@ -93,9 +113,19 @@ export default function RootPage() {
       <View>
         <View className="mb-5">
           <View className="flex flex-row justify-between">
-            <Text className="font-semibold text-base">Featured Products</Text>
+            <Text
+              className="text-base"
+              style={{ fontFamily: fontFamilies.medium }}
+            >
+              Featured Products
+            </Text>
             <TouchableOpacity>
-              <Text className="text-[#3669C9]">See All</Text>
+              <Text
+                className="text-[#3669C9]"
+                style={{ fontFamily: fontFamilies.regular }}
+              >
+                See All
+              </Text>
             </TouchableOpacity>
           </View>
         </View>

@@ -3,6 +3,7 @@ import Svg, { Path } from "react-native-svg";
 import type { Product } from "../types/product.type";
 import { TouchableOpacity } from "react-native";
 import { router } from "expo-router";
+import { fontFamilies } from "../styles/base";
 
 interface ProductCardProps {
   product: Product;
@@ -11,7 +12,7 @@ interface ProductCardProps {
 export default function ProductCard({ product }: ProductCardProps) {
   return (
     <TouchableOpacity
-      className="bg-white p-3 my-3 mx-2"
+      className="bg-white px-2 pt-3 pb-0 my-3 mx-2"
       style={{
         borderRadius: 10,
         width: 156,
@@ -39,8 +40,16 @@ export default function ProductCard({ product }: ProductCardProps) {
         className="mb-6 rounded-lg w-full"
       />
       <View>
-        <Text className="font-medium text-[#0C1A30] mb-1">{product.title}</Text>
-        <Text className="text-[#FE3A30] text-xs font-medium">
+        <Text
+          className="font-medium text-[#0C1A30] mb-1"
+          style={{ fontFamily: fontFamilies.medium }}
+        >
+          {product.title}
+        </Text>
+        <Text
+          className="text-[#FE3A30] text-xs font-medium"
+          style={{ fontFamily: fontFamilies.medium }}
+        >
           $
           {product.discountPercentage
             ? Math.round(
@@ -53,7 +62,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         {product.discountPercentage && (
           <Text
             className="line-through text-[#C4C5C4] mb-2"
-            style={{ fontSize: 10 }}
+            style={{ fontSize: 10, fontFamily: fontFamilies.regular }}
           >
             ${product.price}.00
           </Text>
@@ -69,14 +78,14 @@ export default function ProductCard({ product }: ProductCardProps) {
               </Svg>
               <Text
                 className="text-[#0C1A30] font-medium"
-                style={{ fontSize: 10 }}
+                style={{ fontSize: 10, fontFamily: fontFamilies.medium }}
               >
                 {product.rating}
               </Text>
             </View>
             <Text
               className="text-[#0C1A30] font-medium"
-              style={{ fontSize: 10 }}
+              style={{ fontSize: 10, fontFamily: fontFamilies.medium }}
             >
               {product.stock} Stocks
             </Text>
