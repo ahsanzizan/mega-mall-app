@@ -2,7 +2,7 @@ import { router, useLocalSearchParams } from "expo-router";
 import { useEffect, useState } from "react";
 import { Text, View, Image } from "react-native";
 import type { Product } from "../../types/product.type";
-import { getProductById } from "../../lib/queries/product.queries";
+import { getProductById } from "../../utils/queries/product.queries";
 import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
 import { Path, Svg } from "react-native-svg";
 import { fontFamilies } from "../../styles/base";

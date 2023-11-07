@@ -2,7 +2,7 @@ import { Image, Text, TouchableOpacity, View } from "react-native";
 import {
   getAllCategories,
   getAllProducts,
-} from "../lib/queries/product.queries";
+} from "../utils/queries/product.queries";
 import { useState, useEffect } from "react";
 import type { Product } from "../types/product.type";
 import { ScrollView } from "react-native-gesture-handler";
@@ -14,7 +14,7 @@ import MarketingCard from "../components/MarketingCard";
 import CategoryTag from "../components/CategoryTag";
 import SpecialProductCard from "../components/SpecialProductCard";
 import { Post } from "../types/post.type";
-import { getAllPosts } from "../lib/queries/post.queries";
+import { getAllPosts } from "../utils/queries/post.queries";
 import PostCard from "../components/PostCard";
 
 export default function RootPage() {
