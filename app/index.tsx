@@ -31,7 +31,7 @@ export default function RootPage() {
   }, []);
 
   return (
-    <ScrollView className="p-6">
+    <ScrollView className="px-6 py-10">
       <View
         className="w-full mb-7 flex flex-row justify-between relative"
         style={{ borderRadius: 10 }}
