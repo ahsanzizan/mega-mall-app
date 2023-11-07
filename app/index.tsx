@@ -76,7 +76,11 @@ export default function RootPage() {
           </View>
         </ScrollView>
       </View>
-      <SpecialProductCard />
+      <SpecialProductCard
+        title={`Modular\nHeadphone`}
+        backgroundColor="#3669C9"
+        imageUri={require("../assets/images/special-product.png")}
+      />
       <View className="mb-7">
         <SectionHeader title="Best Selling" seeAllHref="" />
         <ScrollView
@@ -95,6 +99,11 @@ export default function RootPage() {
           </View>
         </ScrollView>
       </View>
+      <SpecialProductCard
+        title={`CO2 - Cable\nMultifunction`}
+        backgroundColor="#0ACF83"
+        imageUri={require("../assets/images/special-product.png")}
+      />
       <View className="w-full">
         <Text
           className="text-base mb-14"
