@@ -2,15 +2,13 @@ import { Image, Text, View } from "react-native";
 import Svg, { Path } from "react-native-svg";
 import type { Product } from "../types/product.type";
 import { TouchableOpacity } from "react-native";
-import { useRouter } from "expo-router";
+import { router } from "expo-router";
 
 interface ProductCardProps {
   product: Product;
 }
 
 export default function ProductCard({ product }: ProductCardProps) {
-  const router = useRouter();
-
   return (
     <TouchableOpacity
       className="bg-white p-3 my-3 mx-2"
@@ -28,7 +26,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         elevation: 5,
       }}
       onPress={() => {
-        router.push('/products/[id]')
+        router.replace(`../products/${product.id}`);
       }}
     >
       <Image
