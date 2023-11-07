@@ -28,3 +28,11 @@ export async function getProductsByCategory(category: string) {
   );
   return productsByCategory;
 }
+
+export async function getProductById(id: number) {
+  const res: Product = await fetch(`https://dummyjson.com/products/${id}`).then(
+    (res) => res.json()
+  );
+
+  return res;
+}
