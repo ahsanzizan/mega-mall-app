@@ -10,10 +10,21 @@ export async function getAllProducts() {
 }
 
 export async function getAllCategories() {
-  const res = await fetch("https://dummyjson.com/products/categories").then(
-    (res) => res.json()
+  const res: string[] = await fetch(
+    "https://dummyjson.com/products/categories"
+  ).then((res) => res.json());
+
+  return res;
+}
+
+export async function getProductsByCategory(category: string) {
+  const res = await fetch("https://dummyjson.com/products").then((res) =>
+    res.json()
   );
 
-  const categories: string[] = res;
-  return categories;
+  const allProducts: Product[] = res.products;
+  const productsByCategory = allProducts.filter(
+    (product) => product.category === category
+  );
+  return productsByCategory;
 }
