@@ -21,9 +21,9 @@ export default function ProductCard({ product }: ProductCardProps) {
           height: 2,
         },
         shadowOpacity: 0.25,
-        shadowRadius: 3.84,
+        shadowRadius: 3,
 
-        elevation: 5,
+        elevation: 2,
       }}
       onPress={() => {
         router.push(`/products/${product.id}`);
