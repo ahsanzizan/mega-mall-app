@@ -9,6 +9,7 @@ import { ScrollView } from "react-native-gesture-handler";
 import Svg, { Path } from "react-native-svg";
 import ProductCard from "../components/ProductCard";
 import { fontFamilies } from "../styles/base";
+import SectionHeader from "../components/SectionHeader";
 
 export default function RootPage() {
   const [products, setProducts] = useState<Product[] | null>(null);
@@ -66,24 +67,7 @@ export default function RootPage() {
         />
       </View>
       <View className="mb-5">
-        <View className="mb-5">
-          <View className="flex flex-row justify-between">
-            <Text
-              className="text-base"
-              style={{ fontFamily: fontFamilies.medium }}
-            >
-              Categories
-            </Text>
-            <TouchableOpacity>
-              <Text
-                className="text-[#3669C9]"
-                style={{ fontFamily: fontFamilies.regular }}
-              >
-                See All
-              </Text>
-            </TouchableOpacity>
-          </View>
-        </View>
+        <SectionHeader title="Categories" seeAllHref="" />
         <ScrollView
           className="overflow-visible"
           overScrollMode="never"
@@ -111,24 +95,7 @@ export default function RootPage() {
         </ScrollView>
       </View>
       <View>
-        <View className="mb-5">
-          <View className="flex flex-row justify-between">
-            <Text
-              className="text-base"
-              style={{ fontFamily: fontFamilies.medium }}
-            >
-              Featured Products
-            </Text>
-            <TouchableOpacity>
-              <Text
-                className="text-[#3669C9]"
-                style={{ fontFamily: fontFamilies.regular }}
-              >
-                See All
-              </Text>
-            </TouchableOpacity>
-          </View>
-        </View>
+        <SectionHeader title="Featured Products" seeAllHref="" />
         <ScrollView
           className="overflow-visible"
           overScrollMode="never"
