@@ -26,7 +26,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         elevation: 5,
       }}
       onPress={() => {
-        router.replace(`../products/${product.id}`);
+        router.push(`/products/${product.id}`);
       }}
     >
       <Image
