@@ -11,6 +11,7 @@ import ProductCard from "../components/ProductCard";
 import { fontFamilies } from "../styles/base";
 import SectionHeader from "../components/SectionHeader";
 import MarketingCard from "../components/MarketingCard";
+import CategoryTag from "../components/CategoryTag";
 
 export default function RootPage() {
   const [products, setProducts] = useState<Product[] | null>(null);
@@ -47,19 +48,7 @@ export default function RootPage() {
           <View className="flex flex-row gap-2 overflow-visible">
             {categories &&
               categories.map((category, i) => {
-                return (
-                  <TouchableOpacity
-                    key={i}
-                    className="px-3 py-2 border border-[#FE3A30] rounded-full"
-                  >
-                    <Text
-                      className="font-medium text-[#FE3A30]"
-                      style={{ fontFamily: fontFamilies.medium }}
-                    >
-                      {category.replace(category[0], category[0].toUpperCase())}
-                    </Text>
-                  </TouchableOpacity>
-                );
+                return <CategoryTag key={i} category={category} />;
               })}
           </View>
         </ScrollView>
