@@ -25,27 +25,29 @@ export default function RootPage() {
 
   return (
     <ScrollView className="p-6">
-      <View className="mb-5">
-        <View className="flex flex-row justify-between">
-          <Text className="font-semibold text-base">Featured Products</Text>
-          <TouchableOpacity>
-            <Text className="text-[#3669C9]">See All</Text>
-          </TouchableOpacity>
+      <View>
+        <View className="mb-5">
+          <View className="flex flex-row justify-between">
+            <Text className="font-semibold text-base">Featured Products</Text>
+            <TouchableOpacity>
+              <Text className="text-[#3669C9]">See All</Text>
+            </TouchableOpacity>
+          </View>
         </View>
+        <ScrollView
+          className="overflow-visible"
+          overScrollMode="never"
+          horizontal
+          showsHorizontalScrollIndicator={false}
+        >
+          <View className="flex flex-row gap-1 overflow-visible">
+            {products &&
+              products.map((product) => {
+                return <ProductCard key={product.id} product={product} />;
+              })}
+          </View>
+        </ScrollView>
       </View>
-      <ScrollView
-        className="overflow-visible"
-        overScrollMode="never"
-        horizontal
-        showsHorizontalScrollIndicator={false}
-      >
-        <View className="flex flex-row gap-1 overflow-visible">
-          {products &&
-            products.map((product) => {
-              return <ProductCard key={product.id} product={product} />;
-            })}
-        </View>
-      </ScrollView>
     </ScrollView>
   );
 }
