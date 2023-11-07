@@ -37,7 +37,7 @@ export default function RootPage() {
         style={{ borderRadius: 10 }}
       >
         <View
-          className="bg-[#3669C9] py-8 px-6"
+          className="bg-[#3669C9] py-8 pl-6 pr-10"
           style={{
             borderTopLeftRadius: 10,
             borderBottomLeftRadius: 10,
@@ -48,7 +48,9 @@ export default function RootPage() {
           <Text className="text-white font-bold text-xl mb-2">
             Gratis Ongkir{"\n"}Selama PPKM!
           </Text>
-          <Text className="text-white">Periode Mei - Agustus 2020</Text>
+          <Text className="text-white" style={{ fontSize: 10 }}>
+            Periode Mei - Agustus 2020
+          </Text>
         </View>
         <Image
           source={require("../assets/images/cover.png")}
