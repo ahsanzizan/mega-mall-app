@@ -27,7 +27,7 @@ export default function ViewProduct() {
   }, []);
 
   return (
-    <ScrollView className="px-6 py-16">
+    <ScrollView className="px-6 py-16" showsVerticalScrollIndicator={false}>
       <View className="flex flex-row justify-between items-center mb-10">
         <TouchableOpacity
           onPress={() => {
@@ -178,8 +178,13 @@ export default function ViewProduct() {
             </TouchableOpacity>
           </View>
           <View className="mb-32">
-            <Text className="mb-4" style={{fontFamily: fontFamilies.bold}}>Product Description</Text>
-            <Text className="text-sm" style={{fontFamily: fontFamilies.regular}}>
+            <Text className="mb-4" style={{ fontFamily: fontFamilies.bold }}>
+              Product Description
+            </Text>
+            <Text
+              className="text-sm"
+              style={{ fontFamily: fontFamilies.regular }}
+            >
               {product.description}. Lorem ipsum, dolor sit amet consectetur
               adipisicing elit. Laboriosam enim amet vitae incidunt corrupti nam
               esse nostrum cupiditate consectetur ut distinctio, minus nulla
