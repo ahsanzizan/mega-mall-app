@@ -17,6 +17,10 @@ import { Post } from "../../types/post.type";
 import { getAllPosts } from "../../utils/queries/post.queries";
 import PostCard from "../../components/PostCard";
 import SearchBar from "../../components/SearchBar";
+import {
+  getSpecilOffersProducts,
+  getTopRatedProducts,
+} from "../../utils/sortProducts";
 
 export default function HomePage() {
   const [products, setProducts] = useState<Product[] | null>(null);
@@ -117,7 +121,7 @@ export default function HomePage() {
         imageUri={require("../../assets/images/special-product.png")}
       />
       <View className="mb-7">
-        <SectionHeader title="Best Selling" seeAllHref="" />
+        <SectionHeader title="Top Rated" seeAllHref="" />
         <ScrollView
           className="overflow-visible"
           overScrollMode="never"
@@ -126,11 +130,9 @@ export default function HomePage() {
         >
           <View className="flex flex-row gap-1 overflow-visible">
             {products &&
-              products
-                .filter((product) => product.rating > 4.5)
-                .map((product) => {
-                  return <ProductCard key={product.id} product={product} />;
-                })}
+              getTopRatedProducts(products).map((product) => {
+                return <ProductCard key={product.id} product={product} />;
+              })}
           </View>
         </ScrollView>
       </View>
@@ -144,15 +146,9 @@ export default function HomePage() {
         >
           <View className="flex flex-row gap-1 overflow-visible">
             {products &&
-              products
-                .filter(
-                  (product) =>
-                    product.discountPercentage &&
-                    product.discountPercentage > 40
-                )
-                .map((product) => {
-                  return <ProductCard key={product.id} product={product} />;
-                })}
+              getSpecilOffersProducts(products).map((product) => {
+                return <ProductCard key={product.id} product={product} />;
+              })}
           </View>
         </ScrollView>
       </View>
