@@ -16,6 +16,7 @@ import SpecialProductCard from "../../components/SpecialProductCard";
 import { Post } from "../../types/post.type";
 import { getAllPosts } from "../../utils/queries/post.queries";
 import PostCard from "../../components/PostCard";
+import SearchBar from "../../components/SearchBar";
 
 export default function HomePage() {
   const [products, setProducts] = useState<Product[] | null>(null);
@@ -43,6 +44,9 @@ export default function HomePage() {
 
   return (
     <ScrollView className="px-6 py-16" showsVerticalScrollIndicator={false}>
+      <View className="w-full mb-7">
+        <SearchBar placeholder="Search Product Name" href="/products/search" />
+      </View>
       <MarketingCard />
       <View className="mb-5">
         <SectionHeader title="Categories" seeAllHref="" />
