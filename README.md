@@ -10,9 +10,13 @@
 - <del>News section</del>
 - <del>Category section</del>
 - <del>View Product page</del>
-- Tabbar (Bottom bar)
+- <del>Tabbar (Bottom bar)</del>
 - Search Page
 - Filter by Category page
+- Wishlist Page
+- Order Page
+- View News Page
+- Account Page
 
 ## Guides:
 
