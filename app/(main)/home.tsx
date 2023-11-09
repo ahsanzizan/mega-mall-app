@@ -43,7 +43,7 @@ export default function HomePage() {
   }, []);
 
   return (
-    <ScrollView className="px-6 py-16" showsVerticalScrollIndicator={false}>
+    <ScrollView className="px-6 pb-16 pt-5" showsVerticalScrollIndicator={false}>
       <View className="mb-6 flex flex-row items-center justify-between w-full py-5">
         <Text
           style={{ fontFamily: fontFamilies.bold }}
