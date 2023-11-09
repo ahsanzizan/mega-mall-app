@@ -43,7 +43,10 @@ export default function HomePage() {
   }, []);
 
   return (
-    <ScrollView className="px-6 pb-16 pt-5" showsVerticalScrollIndicator={false}>
+    <ScrollView
+      className="px-6 pb-16 pt-5"
+      showsVerticalScrollIndicator={false}
+    >
       <View className="mb-6 flex flex-row items-center justify-between w-full py-5">
         <Text
           style={{ fontFamily: fontFamilies.bold }}
@@ -125,6 +128,28 @@ export default function HomePage() {
             {products &&
               products
                 .filter((product) => product.rating > 4.5)
+                .map((product) => {
+                  return <ProductCard key={product.id} product={product} />;
+                })}
+          </View>
+        </ScrollView>
+      </View>
+      <View className="mb-7">
+        <SectionHeader title="Special Offers" seeAllHref="" />
+        <ScrollView
+          className="overflow-visible"
+          overScrollMode="never"
+          horizontal
+          showsHorizontalScrollIndicator={false}
+        >
+          <View className="flex flex-row gap-1 overflow-visible">
+            {products &&
+              products
+                .filter(
+                  (product) =>
+                    product.discountPercentage &&
+                    product.discountPercentage > 40
+                )
                 .map((product) => {
                   return <ProductCard key={product.id} product={product} />;
                 })}
