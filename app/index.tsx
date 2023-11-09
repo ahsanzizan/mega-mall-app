@@ -9,5 +9,5 @@ export default function RootPage() {
     return <Redirect href={"/home"} />;
   }
 
-  return <View></View>;
+  return <Redirect href={"/login"} />;
 }
