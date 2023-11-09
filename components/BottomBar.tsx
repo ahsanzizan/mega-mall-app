@@ -37,7 +37,7 @@ export default function BottomBar({ currentPath }: BottomBarProps) {
           </Svg>
           <Text
             className={`${
-              isInHome ? "text-[#3669C9]" : "text-black"
+              isInHome ? "text-primary" : "text-black"
             } text-xs font-semibold`}
             style={{fontFamily: fontFamilies.medium}}
           >
@@ -62,7 +62,7 @@ export default function BottomBar({ currentPath }: BottomBarProps) {
           <Text
             className={`${
               currentPath.includes("/wishlist")
-                ? "text-[#3669C9]"
+                ? "text-primary"
                 : "text-black"
             } text-xs font-semibold`}
             style={{fontFamily: fontFamilies.medium}}
@@ -87,7 +87,7 @@ export default function BottomBar({ currentPath }: BottomBarProps) {
 
           <Text
             className={`${
-              currentPath.includes("/order") ? "text-[#3669C9]" : "text-black"
+              currentPath.includes("/order") ? "text-primary" : "text-black"
             } text-xs font-semibold`}
             style={{fontFamily: fontFamilies.medium}}
           >
@@ -109,7 +109,7 @@ export default function BottomBar({ currentPath }: BottomBarProps) {
 
           <Text
             className={`${
-              currentPath.includes("/account") ? "text-[#3669C9]" : "text-black"
+              currentPath.includes("/account") ? "text-primary" : "text-black"
             } text-xs font-semibold`}
             style={{fontFamily: fontFamilies.medium}}
           >

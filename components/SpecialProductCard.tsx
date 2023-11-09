@@ -28,7 +28,7 @@ export default function SpecialProductCard({
         </Text>
         <TouchableOpacity className="flex flex-row gap-3 items-center">
           <Text
-            className="text-sm text-[#cdcdcd]"
+            className="text-sm text-neutral"
             style={{ fontFamily: fontFamilies.bold }}
           >
             Shop now

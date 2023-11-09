@@ -42,13 +42,13 @@ export default function ProductCard({ product }: ProductCardProps) {
       />
       <View>
         <Text
-          className="font-medium text-[#0C1A30] mb-1"
+          className="font-medium text-secondary mb-1"
           style={{ fontFamily: fontFamilies.medium }}
         >
           {product.title}
         </Text>
         <Text
-          className="text-[#FE3A30] text-xs font-medium"
+          className="text-red text-xs font-medium"
           style={{ fontFamily: fontFamilies.medium }}
         >
           $
@@ -59,7 +59,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         </Text>
         {product.discountPercentage && (
           <Text
-            className="line-through text-[#C4C5C4] mb-2"
+            className="line-through text-neutral mb-2"
             style={{ fontSize: 10, fontFamily: fontFamilies.regular }}
           >
             ${product.price}.00
@@ -75,14 +75,14 @@ export default function ProductCard({ product }: ProductCardProps) {
                 />
               </Svg>
               <Text
-                className="text-[#0C1A30] font-medium"
+                className="text-secondary font-medium"
                 style={{ fontSize: 10, fontFamily: fontFamilies.medium }}
               >
                 {product.rating}
               </Text>
             </View>
             <Text
-              className="text-[#0C1A30] font-medium"
+              className="text-secondary font-medium"
               style={{ fontSize: 10, fontFamily: fontFamilies.medium }}
             >
               {product.stock} Stocks

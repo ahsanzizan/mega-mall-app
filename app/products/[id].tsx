@@ -74,7 +74,7 @@ export default function ViewProduct() {
               style={{ height: 280, borderRadius: 10 }}
             />
             <Text
-              className="text-[#0C1A30] font-medium text-sm"
+              className="text-secondary font-medium text-sm"
               style={{ fontFamily: fontFamilies.medium }}
             >
               1/{product.images.length} Images
@@ -82,13 +82,13 @@ export default function ViewProduct() {
           </View>
           <View className="mb-7">
             <Text
-              className="text-2xl text-[#0C1A30 mb-2"
+              className="text-2xl text-secondary mb-2"
               style={{ fontFamily: fontFamilies.bold }}
             >
               {product.title}
             </Text>
             <Text
-              className="text-[#FE3A30]"
+              className="text-red"
               style={{ fontFamily: fontFamilies.medium }}
             >
               ${" "}
@@ -99,7 +99,7 @@ export default function ViewProduct() {
             </Text>
             {product.discountPercentage && (
               <Text
-                className="line-through text-[#C4C5C4] text-xs mb-3"
+                className="line-through text-neutral text-xs mb-3"
                 style={{ fontFamily: fontFamilies.regular }}
               >
                 $ {product.price}.00
@@ -115,28 +115,28 @@ export default function ViewProduct() {
                     />
                   </Svg>
                   <Text
-                    className="text-[#0C1A30] font-medium"
+                    className="text-secondary font-medium"
                     style={{ fontFamily: fontFamilies.medium }}
                   >
                     {product.rating}
                   </Text>
                 </View>
                 <Text
-                  className="text-[#0C1A30]"
+                  className="text-secondary"
                   style={{ fontFamily: fontFamilies.medium }}
                 >
                   86 Reviews
                 </Text>
               </View>
               <Text
-                className="px-3 py-2 text-[#3A9B7A] bg-[#EEFAF6] rounded-full"
+                className="px-3 py-2 text-green bg-[#EEFAF6] rounded-full"
                 style={{ fontFamily: fontFamilies.bold }}
               >
                 Stock : {product.stock}
               </Text>
             </View>
           </View>
-          <View className="flex flex-row justify-between items-center py-7 border-y border-[#bcbcbc] mb-7">
+          <View className="flex flex-row justify-between items-center py-7 border-y border-neutral mb-7">
             <View className="flex flex-row items-center gap-5">
               <Image
                 source={require("../../assets/images/Company.png")}

@@ -8,7 +8,7 @@ export default function MarketingCard() {
       style={{ borderRadius: 10 }}
     >
       <View
-        className="bg-[#3669C9] py-8 pl-6 pr-12"
+        className="bg-primary py-8 pl-6 pr-12"
         style={{
           borderTopLeftRadius: 10,
           borderBottomLeftRadius: 10,

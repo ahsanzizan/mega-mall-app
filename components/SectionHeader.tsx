@@ -17,7 +17,7 @@ export default function SectionHeader({
       </Text>
       <TouchableOpacity>
         <Text
-          className="text-[#3669C9]"
+          className="text-primary"
           style={{ fontFamily: fontFamilies.regular }}
         >
           See All

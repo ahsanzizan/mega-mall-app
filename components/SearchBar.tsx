@@ -29,7 +29,7 @@ export default function SearchBar({ placeholder, href }: SearchBarProps) {
     >
       <Text
         style={{ fontFamily: fontFamilies.bold }}
-        className="text-[#C4C5C4] text-sm"
+        className="text-neutral text-sm"
       >
         {placeholder}
       </Text>

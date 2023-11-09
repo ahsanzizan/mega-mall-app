@@ -54,7 +54,7 @@ export default function HomePage() {
       <View className="mb-6 flex flex-row items-center justify-between w-full py-5">
         <Text
           style={{ fontFamily: fontFamilies.bold }}
-          className="text-lg text-[#3669C9]"
+          className="text-lg text-primary"
         >
           Mega Mall
         </Text>
@@ -173,7 +173,7 @@ export default function HomePage() {
           </View>
         </View>
         <TouchableOpacity
-          className="w-full py-4 mb-20 border border-[#0C1A30]"
+          className="w-full py-4 mb-20 border border-primary"
           style={{ borderRadius: 10 }}
         >
           <Text className="text-center">See All News</Text>

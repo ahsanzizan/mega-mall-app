@@ -17,7 +17,7 @@ export default function PostCard({ post }: PostCardProps) {
         <Text className="text-xs" style={{ fontFamily: fontFamilies.regular }}>
           {post.body.substring(0, 35) + "..."}
         </Text>
-        <Text className="text-[#838589] text-xs">13 Jan 2021</Text>
+        <Text className="text-neutral text-xs">13 Jan 2021</Text>
       </View>
       <Image
         source={require("../assets/images/post-cover.png")}
