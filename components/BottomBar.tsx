@@ -1,6 +1,7 @@
 import { router } from "expo-router";
 import { View, TouchableOpacity, Text, Image } from "react-native";
 import Svg, { Path, Rect } from "react-native-svg";
+import { fontFamilies } from "../styles/base";
 
 interface BottomBarProps {
   currentPath: string;
@@ -38,6 +39,7 @@ export default function BottomBar({ currentPath }: BottomBarProps) {
             className={`${
               isInHome ? "text-[#3669C9]" : "text-black"
             } text-xs font-semibold`}
+            style={{fontFamily: fontFamilies.medium}}
           >
             HOME
           </Text>
@@ -63,6 +65,7 @@ export default function BottomBar({ currentPath }: BottomBarProps) {
                 ? "text-[#3669C9]"
                 : "text-black"
             } text-xs font-semibold`}
+            style={{fontFamily: fontFamilies.medium}}
           >
             WISHLIST
           </Text>
@@ -86,6 +89,7 @@ export default function BottomBar({ currentPath }: BottomBarProps) {
             className={`${
               currentPath.includes("/order") ? "text-[#3669C9]" : "text-black"
             } text-xs font-semibold`}
+            style={{fontFamily: fontFamilies.medium}}
           >
             ORDER
           </Text>
@@ -107,6 +111,7 @@ export default function BottomBar({ currentPath }: BottomBarProps) {
             className={`${
               currentPath.includes("/account") ? "text-[#3669C9]" : "text-black"
             } text-xs font-semibold`}
+            style={{fontFamily: fontFamilies.medium}}
           >
             ACCOUNT
           </Text>
