@@ -21,6 +21,7 @@ import {
   getSpecilOffersProducts,
   getTopRatedProducts,
 } from "../../utils/sortProducts";
+import { router } from "expo-router";
 
 export default function HomePage() {
   const [products, setProducts] = useState<Product[] | null>(null);
@@ -175,6 +176,9 @@ export default function HomePage() {
         <TouchableOpacity
           className="w-full py-4 mb-20 border border-primary"
           style={{ borderRadius: 10 }}
+          onPress={() => {
+            router.push("/posts/");
+          }}
         >
           <Text className="text-center">See All News</Text>
         </TouchableOpacity>
