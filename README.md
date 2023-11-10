@@ -1,5 +1,9 @@
 # React Native E-Commerce App
 
+### Preview
+
+![App Preview](./docs/images/app_preview.png "App Preview")
+
 ### Special Credits:
 
 - https://dummyjson.com
