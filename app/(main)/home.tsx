@@ -53,6 +53,7 @@ export default function HomePage() {
       showsVerticalScrollIndicator={false}
     >
       <View className="mb-6 flex flex-row items-center justify-between w-full py-5">
+        <View></View>
         <Text
           style={{ fontFamily: fontFamilies.bold }}
           className="text-lg text-primary"
