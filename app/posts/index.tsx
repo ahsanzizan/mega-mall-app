@@ -28,7 +28,10 @@ export default function Posts() {
   }, []);
 
   return (
-    <ScrollView className="px-6 pb-16 pt-5 bg-[#F8F8F8]" showsVerticalScrollIndicator={false}>
+    <ScrollView
+      className="px-6 pb-16 pt-5 bg-[#F8F8F8]"
+      showsVerticalScrollIndicator={false}
+    >
       <View className="mb-6 flex flex-row items-center justify-between w-full py-5 relative">
         <TouchableOpacity
           onPress={() => {
@@ -45,6 +48,7 @@ export default function Posts() {
         <Text style={{ fontFamily: fontFamilies.bold }} className="text-lg">
           News
         </Text>
+        <View></View>
       </View>
       <View className="mb-14">
         <SearchBar placeholder="Search Posts" href="" />
