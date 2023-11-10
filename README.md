@@ -2,7 +2,7 @@
 
 ### Preview
 
-![App Preview](./docs/images/app_preview.png "App Preview")
+<img src="./docs/images/app_preview.png" alt="App Preview" width="400" />
 
 ### Special Credits:
 
