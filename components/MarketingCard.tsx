@@ -31,7 +31,7 @@ export default function MarketingCard() {
       </View>
       <Image
         source={require("../assets/images/cover.png")}
-        className="absolute right-0 -z-10 h-full"
+        className="absolute right-0 -z-10 h-full w-[65%]"
         style={{ borderTopRightRadius: 10, borderBottomRightRadius: 10 }}
       />
     </View>
