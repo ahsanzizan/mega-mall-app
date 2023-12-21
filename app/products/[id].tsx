@@ -1,5 +1,5 @@
 import { router, useLocalSearchParams } from "expo-router";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Text, View, Image } from "react-native";
 import type { Product } from "../../types/product.type";
 import { getProductById } from "../../utils/queries/product.queries";
@@ -13,20 +13,20 @@ export default function ViewProduct() {
   const [product, setProduct] = useState<Product>();
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  useEffect(() => {
-    const init = async () => {
-      setIsLoading(true);
-      try {
-        const product = await getProductById(Number(id));
-        setProduct(product);
-      } catch (error) {
-        return false;
-      }
-      setIsLoading(false);
-      return true;
-    };
+  const fetchProduct = useCallback(async () => {
+    setIsLoading(true);
+    try {
+      const product = await getProductById(Number(id));
+      setProduct(product);
+    } catch (error) {
+      return false;
+    }
+    setIsLoading(false);
+    return true;
+  }, []);
 
-    init();
+  useEffect(() => {
+    fetchProduct();
   }, []);
 
   return (

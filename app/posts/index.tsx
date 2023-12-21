@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Post } from "../../types/post.type";
 import { getAllPosts } from "../../utils/queries/post.queries";
 import { Text, TouchableOpacity, View } from "react-native";
@@ -13,21 +13,21 @@ export default function Posts() {
   const [posts, setPosts] = useState<Post[] | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
+  const fetchPosts = useCallback(async () => {
+    setIsLoading(true);
+    try {
+      const allPosts = await getAllPosts();
+
+      setPosts(allPosts);
+    } catch (error) {
+      return false;
+    }
+    setIsLoading(false);
+    return true;
+  }, []);
+
   useEffect(() => {
-    const init = async () => {
-      setIsLoading(true);
-      try {
-        const allPosts = await getAllPosts();
-
-        setPosts(allPosts);
-      } catch (error) {
-        return false;
-      }
-      setIsLoading(false);
-      return true;
-    };
-
-    init();
+    fetchPosts();
   }, []);
 
   return (

@@ -3,7 +3,7 @@ import {
   getAllCategories,
   getAllProducts,
 } from "../../utils/queries/product.queries";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import type { Product } from "../../types/product.type";
 import { ScrollView } from "react-native-gesture-handler";
 import Svg, { Path } from "react-native-svg";
@@ -29,25 +29,25 @@ export default function HomePage() {
   const [posts, setPosts] = useState<Post[] | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
+  const fetchDatas = useCallback(async () => {
+    setIsLoading(true);
+    try {
+      const allProducts = await getAllProducts();
+      const allCategories = await getAllCategories();
+      const allPosts = await getAllPosts();
+
+      setProducts(allProducts);
+      setCategories(allCategories);
+      setPosts(allPosts);
+    } catch (error) {
+      return false;
+    }
+    setIsLoading(false);
+    return true;
+  }, []);
+
   useEffect(() => {
-    const init = async () => {
-      setIsLoading(true);
-      try {
-        const allProducts = await getAllProducts();
-        const allCategories = await getAllCategories();
-        const allPosts = await getAllPosts();
-
-        setProducts(allProducts);
-        setCategories(allCategories);
-        setPosts(allPosts);
-      } catch (error) {
-        return false;
-      }
-      setIsLoading(false);
-      return true;
-    };
-
-    init();
+    fetchDatas();
   }, []);
 
   return (
