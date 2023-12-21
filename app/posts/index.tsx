@@ -11,9 +11,11 @@ import { Path, Svg } from "react-native-svg";
 
 export default function Posts() {
   const [posts, setPosts] = useState<Post[] | null>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   useEffect(() => {
     const init = async () => {
+      setIsLoading(true);
       try {
         const allPosts = await getAllPosts();
 
@@ -21,6 +23,7 @@ export default function Posts() {
       } catch (error) {
         return false;
       }
+      setIsLoading(false);
       return true;
     };
 

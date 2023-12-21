@@ -27,9 +27,11 @@ export default function HomePage() {
   const [products, setProducts] = useState<Product[] | null>(null);
   const [categories, setCategories] = useState<string[] | null>(null);
   const [posts, setPosts] = useState<Post[] | null>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   useEffect(() => {
     const init = async () => {
+      setIsLoading(true);
       try {
         const allProducts = await getAllProducts();
         const allCategories = await getAllCategories();
@@ -41,6 +43,7 @@ export default function HomePage() {
       } catch (error) {
         return false;
       }
+      setIsLoading(false);
       return true;
     };
 

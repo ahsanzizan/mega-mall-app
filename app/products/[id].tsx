@@ -11,15 +11,18 @@ import { calcDiscountedPrice } from "../../utils/calculateDiscount";
 export default function ViewProduct() {
   const { id } = useLocalSearchParams();
   const [product, setProduct] = useState<Product>();
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   useEffect(() => {
     const init = async () => {
+      setIsLoading(true);
       try {
         const product = await getProductById(Number(id));
         setProduct(product);
       } catch (error) {
         return false;
       }
+      setIsLoading(false);
       return true;
     };
 
