@@ -8,6 +8,8 @@ import { fontFamilies } from "../../styles/base";
 import { ScrollView } from "react-native-gesture-handler";
 import SearchBar from "../../components/SearchBar";
 import { Path, Svg } from "react-native-svg";
+import { Skeleton } from "moti/skeleton";
+import { SkeletonCommonProps } from "../../utils/props";
 
 export default function Posts() {
   const [posts, setPosts] = useState<Post[] | null>(null);
@@ -58,12 +60,20 @@ export default function Posts() {
       </View>
       <View className="w-full">
         <View className="w-full mb-7">
-          <View className="flex flex-col gap-8">
-            {posts &&
-              posts
-                .slice(0, 5)
-                .map((post) => <PostCard key={post.id} post={post} />)}
-          </View>
+          <Skeleton
+            width={"100%"}
+            height={156}
+            radius={8}
+            show={isLoading}
+            {...SkeletonCommonProps}
+          >
+            <View className="flex flex-col gap-8">
+              {posts &&
+                posts
+                  .slice(0, 5)
+                  .map((post) => <PostCard key={post.id} post={post} />)}
+            </View>
+          </Skeleton>
         </View>
       </View>
     </ScrollView>
