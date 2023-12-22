@@ -57,10 +57,10 @@ export default function HomePage() {
       className="px-6 pb-16 pt-5"
       showsVerticalScrollIndicator={false}
     >
-      <View className="mb-6 flex flex-row items-center justify-between w-full py-5">
+      <View className="mb-6 flex w-full flex-row items-center justify-between py-5">
         <Text
           style={{ fontFamily: fontFamilies.bold }}
-          className="text-lg text-primary mx-auto"
+          className="mx-auto text-lg text-primary"
         >
           Mega Mall
         </Text>
@@ -85,7 +85,7 @@ export default function HomePage() {
           </TouchableOpacity>
         </View>
       </View>
-      <View className="w-full mb-7">
+      <View className="mb-7 w-full">
         <SearchBar placeholder="Search Product Name" href="/products/search" />
       </View>
       <MarketingCard />
@@ -197,7 +197,7 @@ export default function HomePage() {
       />
       <View className="w-full">
         <Text
-          className="text-base mb-14"
+          className="mb-14 text-base"
           style={{ fontFamily: fontFamilies.medium }}
         >
           Latest News
@@ -209,7 +209,7 @@ export default function HomePage() {
           show={isLoading}
           {...SkeletonCommonProps}
         >
-          <View className="w-full mb-7">
+          <View className="mb-7 w-full">
             <View className="flex flex-col gap-8">
               {posts &&
                 posts
@@ -219,7 +219,7 @@ export default function HomePage() {
           </View>
         </Skeleton>
         <TouchableOpacity
-          className="w-full py-4 mb-20 border border-primary"
+          className="mb-20 w-full border border-primary py-4"
           style={{ borderRadius: 10 }}
           onPress={() => {
             router.push("/posts/");

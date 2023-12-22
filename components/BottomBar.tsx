@@ -16,7 +16,7 @@ export default function BottomBar({ currentPath }: BottomBarProps) {
   return (
     <View
       style={{ minWidth: 360 }}
-      className="bg-white px-6 py-3 block fixed inset-x-0 bottom-0 z-10"
+      className="fixed inset-x-0 bottom-0 z-10 block bg-white px-6 py-3"
     >
       <View className="flex flex-row justify-between px-2">
         <TouchableOpacity
@@ -39,7 +39,7 @@ export default function BottomBar({ currentPath }: BottomBarProps) {
             className={`${
               isInHome ? "text-primary" : "text-black"
             } text-xs font-semibold`}
-            style={{fontFamily: fontFamilies.medium}}
+            style={{ fontFamily: fontFamilies.medium }}
           >
             HOME
           </Text>
@@ -61,11 +61,9 @@ export default function BottomBar({ currentPath }: BottomBarProps) {
 
           <Text
             className={`${
-              currentPath.includes("/wishlist")
-                ? "text-primary"
-                : "text-black"
+              currentPath.includes("/wishlist") ? "text-primary" : "text-black"
             } text-xs font-semibold`}
-            style={{fontFamily: fontFamilies.medium}}
+            style={{ fontFamily: fontFamilies.medium }}
           >
             WISHLIST
           </Text>
@@ -89,7 +87,7 @@ export default function BottomBar({ currentPath }: BottomBarProps) {
             className={`${
               currentPath.includes("/order") ? "text-primary" : "text-black"
             } text-xs font-semibold`}
-            style={{fontFamily: fontFamilies.medium}}
+            style={{ fontFamily: fontFamilies.medium }}
           >
             ORDER
           </Text>
@@ -104,14 +102,14 @@ export default function BottomBar({ currentPath }: BottomBarProps) {
             source={require("../assets/images/profile.jpg")}
             width={24}
             height={24}
-            className="w-6 h-6 rounded-full"
+            className="h-6 w-6 rounded-full"
           />
 
           <Text
             className={`${
               currentPath.includes("/account") ? "text-primary" : "text-black"
             } text-xs font-semibold`}
-            style={{fontFamily: fontFamilies.medium}}
+            style={{ fontFamily: fontFamilies.medium }}
           >
             ACCOUNT
           </Text>

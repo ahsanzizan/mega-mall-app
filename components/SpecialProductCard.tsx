@@ -17,7 +17,7 @@ export default function SpecialProductCard({
   return (
     <View
       style={{ backgroundColor: `${backgroundColor}`, borderRadius: 10 }}
-      className="px-6 py-5 flex flex-row justify-between mb-7 items-center"
+      className="mb-7 flex flex-row items-center justify-between px-6 py-5"
     >
       <View>
         <Text
@@ -26,7 +26,7 @@ export default function SpecialProductCard({
         >
           {title}
         </Text>
-        <TouchableOpacity className="flex flex-row gap-3 items-center">
+        <TouchableOpacity className="flex flex-row items-center gap-3">
           <Text
             className="text-sm text-neutral"
             style={{ fontFamily: fontFamilies.bold }}

@@ -4,7 +4,7 @@ import { fontFamilies } from "../styles/base";
 export default function MarketingCard() {
   return (
     <View
-      className="w-full mb-7 flex flex-row justify-between relative"
+      className="relative mb-7 flex w-full flex-row justify-between"
       style={{ borderRadius: 10 }}
     >
       <View
@@ -17,7 +17,7 @@ export default function MarketingCard() {
         }}
       >
         <Text
-          className="text-white font-bold text-xl mb-2"
+          className="mb-2 text-xl font-bold text-white"
           style={{ fontFamily: fontFamilies.bold }}
         >
           Gratis Ongkir{"\n"}Selama PPKM!

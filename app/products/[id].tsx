@@ -31,7 +31,7 @@ export default function ViewProduct() {
 
   return (
     <ScrollView className="px-6 py-16" showsVerticalScrollIndicator={false}>
-      <View className="flex flex-row justify-between items-center mb-10">
+      <View className="mb-10 flex flex-row items-center justify-between">
         <TouchableOpacity
           onPress={() => {
             router.back();
@@ -73,11 +73,11 @@ export default function ViewProduct() {
           <View className="mb-7">
             <Image
               source={{ uri: product.images[0] }}
-              className="w-full border p-2 mb-3"
+              className="mb-3 w-full border p-2"
               style={{ height: 280, borderRadius: 10 }}
             />
             <Text
-              className="text-secondary font-medium text-sm"
+              className="text-sm font-medium text-secondary"
               style={{ fontFamily: fontFamilies.medium }}
             >
               1/{product.images.length} Images
@@ -85,7 +85,7 @@ export default function ViewProduct() {
           </View>
           <View className="mb-7">
             <Text
-              className="text-2xl text-secondary mb-2"
+              className="mb-2 text-2xl text-secondary"
               style={{ fontFamily: fontFamilies.bold }}
             >
               {product.title}
@@ -102,14 +102,14 @@ export default function ViewProduct() {
             </Text>
             {product.discountPercentage && (
               <Text
-                className="line-through text-neutral text-xs mb-3"
+                className="mb-3 text-xs text-neutral line-through"
                 style={{ fontFamily: fontFamilies.regular }}
               >
                 $ {product.price}.00
               </Text>
             )}
             <View className="flex flex-row items-center justify-between">
-              <View className="flex flex-row gap-3 items-center">
+              <View className="flex flex-row items-center gap-3">
                 <View className="flex flex-row items-center" style={{ gap: 3 }}>
                   <Svg width="16" height="16" viewBox="0 0 11 10" fill="none">
                     <Path
@@ -118,7 +118,7 @@ export default function ViewProduct() {
                     />
                   </Svg>
                   <Text
-                    className="text-secondary font-medium"
+                    className="font-medium text-secondary"
                     style={{ fontFamily: fontFamilies.medium }}
                   >
                     {product.rating}
@@ -132,14 +132,14 @@ export default function ViewProduct() {
                 </Text>
               </View>
               <Text
-                className="px-3 py-2 text-green bg-[#EEFAF6] rounded-full"
+                className="rounded-full bg-[#EEFAF6] px-3 py-2 text-green"
                 style={{ fontFamily: fontFamilies.bold }}
               >
                 Stock : {product.stock}
               </Text>
             </View>
           </View>
-          <View className="flex flex-row justify-between items-center py-7 border-y border-neutral mb-7">
+          <View className="mb-7 flex flex-row items-center justify-between border-y border-neutral py-7">
             <View className="flex flex-row items-center gap-5">
               <Image
                 source={require("../../assets/images/Company.png")}
@@ -153,7 +153,7 @@ export default function ViewProduct() {
               />
               <View>
                 <Text
-                  className="text-sm mb-1"
+                  className="mb-1 text-sm"
                   style={{ fontFamily: fontFamilies.bold }}
                 >
                   {product.brand}

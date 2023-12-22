@@ -13,7 +13,7 @@ interface ProductCardProps {
 export default function ProductCard({ product }: ProductCardProps) {
   return (
     <TouchableOpacity
-      className="bg-white px-2 pt-3 pb-0 my-3 mx-2"
+      className="mx-2 my-3 bg-white px-2 pb-0 pt-3"
       style={{
         borderRadius: 10,
         width: 156,
@@ -38,17 +38,17 @@ export default function ProductCard({ product }: ProductCardProps) {
           borderWidth: 1,
           borderColor: "#C4C5C4",
         }}
-        className="mb-6 rounded-lg w-full"
+        className="mb-6 w-full rounded-lg"
       />
       <View>
         <Text
-          className="font-medium text-secondary mb-1"
+          className="mb-1 font-medium text-secondary"
           style={{ fontFamily: fontFamilies.medium }}
         >
           {product.title}
         </Text>
         <Text
-          className="text-red text-xs font-medium"
+          className="text-xs font-medium text-red"
           style={{ fontFamily: fontFamilies.medium }}
         >
           $
@@ -59,7 +59,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         </Text>
         {product.discountPercentage && (
           <Text
-            className="line-through text-neutral mb-2"
+            className="mb-2 text-neutral line-through"
             style={{ fontSize: 10, fontFamily: fontFamilies.regular }}
           >
             ${product.price}.00
@@ -75,14 +75,14 @@ export default function ProductCard({ product }: ProductCardProps) {
                 />
               </Svg>
               <Text
-                className="text-secondary font-medium"
+                className="font-medium text-secondary"
                 style={{ fontSize: 10, fontFamily: fontFamilies.medium }}
               >
                 {product.rating}
               </Text>
             </View>
             <Text
-              className="text-secondary font-medium"
+              className="font-medium text-secondary"
               style={{ fontSize: 10, fontFamily: fontFamilies.medium }}
             >
               {product.stock} Stocks

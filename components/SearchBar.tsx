@@ -25,11 +25,11 @@ export default function SearchBar({ placeholder, href }: SearchBarProps) {
 
         elevation: 2,
       }}
-      className="w-full px-5 py-4 flex flex-row items-center justify-between bg-white rounded-full"
+      className="flex w-full flex-row items-center justify-between rounded-full bg-white px-5 py-4"
     >
       <Text
         style={{ fontFamily: fontFamilies.bold }}
-        className="text-neutral text-sm"
+        className="text-sm text-neutral"
       >
         {placeholder}
       </Text>

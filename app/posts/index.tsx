@@ -34,10 +34,10 @@ export default function Posts() {
 
   return (
     <ScrollView
-      className="px-6 pb-16 pt-5 bg-[#F8F8F8]"
+      className="bg-[#F8F8F8] px-6 pb-16 pt-5"
       showsVerticalScrollIndicator={false}
     >
-      <View className="mb-6 flex flex-row items-center justify-between w-full py-5 relative">
+      <View className="relative mb-6 flex w-full flex-row items-center justify-between py-5">
         <TouchableOpacity
           onPress={() => {
             router.back();
@@ -59,7 +59,7 @@ export default function Posts() {
         <SearchBar placeholder="Search Posts" href="" />
       </View>
       <View className="w-full">
-        <View className="w-full mb-7">
+        <View className="mb-7 w-full">
           <Skeleton
             width={"100%"}
             height={156}

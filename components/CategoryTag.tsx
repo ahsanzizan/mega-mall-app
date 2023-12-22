@@ -7,7 +7,7 @@ interface CategoryTagProps {
 
 export default function CategoryTag({ category }: CategoryTagProps) {
   return (
-    <TouchableOpacity className="px-3 py-2 border border-red rounded-full m-2">
+    <TouchableOpacity className="m-2 rounded-full border border-red px-3 py-2">
       <Text
         className="font-medium text-red"
         style={{ fontFamily: fontFamilies.medium }}

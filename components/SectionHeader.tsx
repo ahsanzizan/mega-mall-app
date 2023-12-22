@@ -11,7 +11,7 @@ export default function SectionHeader({
   seeAllHref,
 }: SectionHeaderProps) {
   return (
-    <View className="flex flex-row justify-between mb-5">
+    <View className="mb-5 flex flex-row justify-between">
       <Text className="text-base" style={{ fontFamily: fontFamilies.medium }}>
         {title}
       </Text>
