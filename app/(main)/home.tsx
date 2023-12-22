@@ -3,7 +3,7 @@ import {
   getAllCategories,
   getAllProducts,
 } from "../../utils/queries/product.queries";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import type { Product } from "../../types/product.type";
 import { ScrollView } from "react-native-gesture-handler";
 import Svg, { Path } from "react-native-svg";
@@ -22,12 +22,14 @@ import {
   getTopRatedProducts,
 } from "../../utils/sortProducts";
 import { router } from "expo-router";
+import { Skeleton } from "moti/skeleton";
+import { SkeletonCommonProps } from "../../utils/props";
 
 export default function HomePage() {
   const [products, setProducts] = useState<Product[] | null>(null);
   const [categories, setCategories] = useState<string[] | null>(null);
   const [posts, setPosts] = useState<Post[] | null>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const fetchDatas = useCallback(async () => {
     setIsLoading(true);
@@ -95,29 +97,45 @@ export default function HomePage() {
           horizontal
           showsHorizontalScrollIndicator={false}
         >
-          <View className="flex flex-row gap-2 overflow-visible">
-            {categories &&
-              categories.map((category, i) => {
-                return <CategoryTag key={i} category={category} />;
-              })}
-          </View>
+          <Skeleton
+            width={"100%"}
+            height={24}
+            radius={999}
+            show={isLoading}
+            {...SkeletonCommonProps}
+          >
+            <View className="flex flex-row gap-2 overflow-visible">
+              {categories &&
+                categories.map((category, i) => {
+                  return <CategoryTag key={i} category={category} />;
+                })}
+            </View>
+          </Skeleton>
         </ScrollView>
       </View>
       <View className="mb-7">
         <SectionHeader title="Featured Products" seeAllHref="" />
-        <ScrollView
-          className="overflow-visible"
-          overScrollMode="never"
-          horizontal
-          showsHorizontalScrollIndicator={false}
+        <Skeleton
+          width={"100%"}
+          height={156}
+          radius={8}
+          show={isLoading}
+          {...SkeletonCommonProps}
         >
-          <View className="flex flex-row gap-1 overflow-visible">
-            {products &&
-              products.map((product) => {
-                return <ProductCard key={product.id} product={product} />;
-              })}
-          </View>
-        </ScrollView>
+          <ScrollView
+            className="overflow-visible"
+            overScrollMode="never"
+            horizontal
+            showsHorizontalScrollIndicator={false}
+          >
+            <View className="flex flex-row gap-1 overflow-visible">
+              {products &&
+                products.map((product) => {
+                  return <ProductCard key={product.id} product={product} />;
+                })}
+            </View>
+          </ScrollView>
+        </Skeleton>
       </View>
       <SpecialProductCard
         title={`Modular\nHeadphone`}
@@ -126,35 +144,51 @@ export default function HomePage() {
       />
       <View className="mb-7">
         <SectionHeader title="Top Rated" seeAllHref="" />
-        <ScrollView
-          className="overflow-visible"
-          overScrollMode="never"
-          horizontal
-          showsHorizontalScrollIndicator={false}
+        <Skeleton
+          width={"100%"}
+          height={156}
+          radius={8}
+          show={isLoading}
+          {...SkeletonCommonProps}
         >
-          <View className="flex flex-row gap-1 overflow-visible">
-            {products &&
-              getTopRatedProducts(products).map((product) => {
-                return <ProductCard key={product.id} product={product} />;
-              })}
-          </View>
-        </ScrollView>
+          <ScrollView
+            className="overflow-visible"
+            overScrollMode="never"
+            horizontal
+            showsHorizontalScrollIndicator={false}
+          >
+            <View className="flex flex-row gap-1 overflow-visible">
+              {products &&
+                getTopRatedProducts(products).map((product) => {
+                  return <ProductCard key={product.id} product={product} />;
+                })}
+            </View>
+          </ScrollView>
+        </Skeleton>
       </View>
       <View className="mb-7">
         <SectionHeader title="Special Offers" seeAllHref="" />
-        <ScrollView
-          className="overflow-visible"
-          overScrollMode="never"
-          horizontal
-          showsHorizontalScrollIndicator={false}
+        <Skeleton
+          width={"100%"}
+          height={156}
+          radius={8}
+          show={isLoading}
+          {...SkeletonCommonProps}
         >
-          <View className="flex flex-row gap-1 overflow-visible">
-            {products &&
-              getSpecilOffersProducts(products).map((product) => {
-                return <ProductCard key={product.id} product={product} />;
-              })}
-          </View>
-        </ScrollView>
+          <ScrollView
+            className="overflow-visible"
+            overScrollMode="never"
+            horizontal
+            showsHorizontalScrollIndicator={false}
+          >
+            <View className="flex flex-row gap-1 overflow-visible">
+              {products &&
+                getSpecilOffersProducts(products).map((product) => {
+                  return <ProductCard key={product.id} product={product} />;
+                })}
+            </View>
+          </ScrollView>
+        </Skeleton>
       </View>
       <SpecialProductCard
         title={`CO2 - Cable\nMultifunction`}
@@ -168,14 +202,22 @@ export default function HomePage() {
         >
           Latest News
         </Text>
-        <View className="w-full mb-7">
-          <View className="flex flex-col gap-8">
-            {posts &&
-              posts
-                .slice(0, 5)
-                .map((post) => <PostCard key={post.id} post={post} />)}
+        <Skeleton
+          width={"100%"}
+          height={156}
+          radius={8}
+          show={isLoading}
+          {...SkeletonCommonProps}
+        >
+          <View className="w-full mb-7">
+            <View className="flex flex-col gap-8">
+              {posts &&
+                posts
+                  .slice(0, 5)
+                  .map((post) => <PostCard key={post.id} post={post} />)}
+            </View>
           </View>
-        </View>
+        </Skeleton>
         <TouchableOpacity
           className="w-full py-4 mb-20 border border-primary"
           style={{ borderRadius: 10 }}
